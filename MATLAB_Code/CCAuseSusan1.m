@@ -8,7 +8,15 @@
 
 function pfs=CCAuseSusan1(Susanim)
 
+if ndims(Susanim)==3
+    im0=im2double(rgb2gray(Susanim));
+else
+    im0=im2double(Susanim);
+end
 
+if  max(im0(:))>200
+    im0=im0/255;
+end
 
 global panelsnum;
 global storepanels;
